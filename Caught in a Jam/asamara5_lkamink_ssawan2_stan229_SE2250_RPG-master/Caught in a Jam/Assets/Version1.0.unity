@@ -1556,7 +1556,6 @@ GameObject:
   - component: {fileID: 1407592907}
   - component: {fileID: 1407592906}
   - component: {fileID: 1407592905}
-  - component: {fileID: 1407592908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1629,18 +1628,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
 --- !u!1 &1551126132
 GameObject:
-=======
---- !u!114 &1407592908
-MonoBehaviour:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1551126133}
@@ -2613,16 +2606,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
-=======
-  m_GameObject: {fileID: 1407592904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c41a4e09b3e3b4bb567b1fbb79da94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 142875639}
-  offset: {x: 0, y: 0}
->>>>>>> Stashed changes
 --- !u!1 &1558058170
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,25 +4,38 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
- 
     // Start is called before the first frame update
-    private void Awake()
-    {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-    }
-
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-     
+        /*   Vector3 move = Vector3.zero;
+           float speed = 1f;
 
+           if (Input.GetKeyDown(KeyCode.LeftArrow))
+           {
+               move = Vector3.left;
+           }
+           if (Input.GetKeyDown(KeyCode.RightArrow))
+           {
+               move = Vector3.right;
+           }
+           if (Input.GetKeyDown(KeyCode.UpArrow))
+           {
+               move = Vector3.up;
+           }
+           if (Input.GetKeyDown(KeyCode.DownArrow))
+           {
+               move = Vector3.down;
+           }
+
+           gameObject.transform.position = gameObject.transform.position + move * speed;
+           */
         float speed = 5f;
         //Pull in information from the Input class
         float xAxis = Input.GetAxis("Horizontal");
@@ -35,6 +48,4 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
 
     }
-
 }
-
