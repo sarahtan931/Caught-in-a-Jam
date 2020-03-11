@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 142875640}
   - component: {fileID: 142875644}
   - component: {fileID: 142875643}
+  - component: {fileID: 142875645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -235,7 +236,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &142875644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,7 +246,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 142875639}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cfa587dd608e1144997052adba2e6d41, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -262,6 +263,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.3993893, y: 6.7516403}
   m_EdgeRadius: 0
+--- !u!114 &142875645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142875639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0783cf92225d7464fb93a6b3204d8191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpSpeed: 5
+  projectilePrefab: {fileID: 9109571373432424586, guid: 64e4b5129a3e82e49ab97399c6c2db72,
+    type: 3}
+  projectileSpeed: 40
 --- !u!1 &185106695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1574,7 @@ GameObject:
   - component: {fileID: 1407592907}
   - component: {fileID: 1407592906}
   - component: {fileID: 1407592905}
+  - component: {fileID: 1407592908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1628,6 +1647,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1407592908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407592904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b00664c292cd44cacc34684073c016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 142875642}
+  offset: {x: 4, y: 0, z: -10}
 --- !u!1 &1551126132
 GameObject:
   m_ObjectHideFlags: 0
