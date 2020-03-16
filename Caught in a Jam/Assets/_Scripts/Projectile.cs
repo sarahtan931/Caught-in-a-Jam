@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+
     private BoundsCheck bndCheck;
 
-    private void Awake()
+    void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
     }
 
-    private void Update()
-    {
-        if (bndCheck.offUp)
+    //calls move function for every frame
+    void Update()
+    { 
+
+        //checks if BoundScript is active on GameObject and if so destroys object if needed
+        if (bndCheck != null && (bndCheck.offDown || bndCheck.offLeft || bndCheck.offRight))
         {
             Destroy(gameObject);
         }
+
     }
 }

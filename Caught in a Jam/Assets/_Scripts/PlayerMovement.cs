@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
+    private bool direction;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        direction = false;
     }
 
     // Update is called once per frame
@@ -23,10 +25,12 @@ public class PlayerMovement : MonoBehaviour
         if (movement > 0f)
         {
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
+            direction = true;
         }
         else if (movement < 0f)
         {
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
+            direction = false;
         }
         else
         {
@@ -48,8 +52,16 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject projGo = Instantiate<GameObject>(projectilePrefab);
         projGo.transform.position = transform.position;
-        Rigidbody rigidB = projGo.GetComponent<Rigidbody>();
-        rigidB.velocity = Vector3.right * projectileSpeed;
+        Rigidbody2D rigidB = projGo.GetComponent<Rigidbody2D>();
+       //rojectile testProj = projGo.GetComponent<Projectile>();
 
+       if (direction == true)
+       {
+            rigidB.velocity = Vector2.right * projectileSpeed;
+        }
+       else
+       {
+            rigidB.velocity = Vector2.left * projectileSpeed;
+        }
     }
 }
