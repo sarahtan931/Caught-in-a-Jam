@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class PlayerMovement : MonoBehaviour
 {
+  
     public float speed = 5f;
     public float jumpSpeed = 8f;
     private float movement = 0f;
@@ -11,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     private bool direction;
+    private bool isOnGround = true;
 
     void Start()
     {
@@ -18,6 +21,15 @@ public class PlayerMovement : MonoBehaviour
         direction = false;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Grass")
+        { // The script would be placed on the Ground object in this example
+            isOnGround = true;
+
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,9 +48,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround == true)
         {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed); ;
+            rigidBody.velocity = Vector2.up*jumpSpeed;
+            isOnGround = false;
         }
 
         //allow the ship to fire 

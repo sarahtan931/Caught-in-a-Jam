@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5e3aa4632bc7b43b8917ef9ecf122d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: -2.5
+  radius: -8
   keepOnScreen: 0
   isOnScreen: 1
   camWidth: 0
@@ -115,8 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23b4db2100fdb0459d35423ba951617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 0
-  right: 0
 --- !u!58 &-7730460563667376837
 CircleCollider2D:
   m_ObjectHideFlags: 0

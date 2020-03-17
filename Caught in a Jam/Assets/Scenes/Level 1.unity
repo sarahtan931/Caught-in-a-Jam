@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 142875645}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpSpeed: 5
+  jumpSpeed: 9
   projectilePrefab: {fileID: 9109571373432424586, guid: 64e4b5129a3e82e49ab97399c6c2db72,
     type: 3}
   projectileSpeed: 20
@@ -1202,7 +1202,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.084107
+  orthographic size: 3.9417908
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1258,9 +1258,9 @@ GameObject:
   - component: {fileID: 1551126135}
   - component: {fileID: 1551126134}
   - component: {fileID: 1551126136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
