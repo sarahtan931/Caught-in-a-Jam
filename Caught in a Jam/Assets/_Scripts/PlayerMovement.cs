@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     public float projectileSpeed = 40;
     private bool direction;
 
+    private GameObject _lastTriggerGo = null;
+    [SerializeField]
+    private float _destroyEnemy = 1;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -64,4 +68,43 @@ public class PlayerMovement : MonoBehaviour
             rigidB.velocity = Vector2.left * projectileSpeed;
         }
     }
+
+    // references the last GameObject that triggered Hero's collider
+ 
+    void onTriggerEnter2D(Collider2D collision)
+    {
+        Transform rootT = collision.gameObject.transform.root;
+        GameObject go = rootT.gameObject;
+
+        // checks if the current GameObject triggering Hero's collider is the same as the last
+        // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject
+        if (go == _lastTriggerGo)
+        {
+            return;
+        }
+        _lastTriggerGo = go;
+
+        // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
+        if (go.tag == "Enemy")
+        {
+            destroyEnemy--;
+            Destroy(go);
+        }
+    }
+    public float destroyEnemy
+    {
+        get
+        {
+            return (_destroyEnemy);
+        }
+        set
+        {
+            _destroyEnemy = Mathf.Min(value, 4);
+            if (value < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
 }
