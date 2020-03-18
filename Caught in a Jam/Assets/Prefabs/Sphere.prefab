@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -4233337842035483028}
   - component: {fileID: -7730460563667376837}
   - component: {fileID: -3148456667707877061}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23b4db2100fdb0459d35423ba951617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destroyEnemy: 1
 --- !u!58 &-7730460563667376837
 CircleCollider2D:
   m_ObjectHideFlags: 0

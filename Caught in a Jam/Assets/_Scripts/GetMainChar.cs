@@ -6,7 +6,7 @@ using UnityEngine;
 public class GetMainChar : MonoBehaviour
 {
 
-    public Sprite strawberry, peach, apple;
+    public Sprite strawberry, peach, apple, blueberry;
     private SpriteRenderer mySprite;
     private readonly string selectedCharacter = "SelectedCharacter";
 
@@ -31,23 +31,26 @@ public class GetMainChar : MonoBehaviour
 
         switch (getCharacter)
         {
-            case 2:
+            case 1:
                 mySprite.sprite = peach;
                 strength = 2;
                 defense = 4;
                 rot = 1.05f;
                 break;
-            case 3:
+            case 2:
                 mySprite.sprite = apple;
                 strength = 4;
                 defense = 2;
                 rot = 1.25f;
                 break;
-            case 1:
+            case 3:
                 mySprite.sprite = strawberry;
                 strength = 3;
                 defense = 2;
                 rot = 1f;
+                break;
+            case 4:
+                mySprite.sprite = blueberry;
                 break;
             default:
                 break;
