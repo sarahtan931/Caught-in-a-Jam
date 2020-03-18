@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     private bool direction;
+    private bool isOnGround = false;
 
     private GameObject _lastTriggerGo = null;
     [SerializeField]
@@ -20,6 +21,15 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         direction = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision.gameObject.tag);
+        if(collision.gameObject.tag == "Grass")
+        {
+            isOnGround = true;
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround == true)
         {
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed); ;
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
+            isOnGround = false;
         }
 
         //allow the ship to fire 
