@@ -28,10 +28,12 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         Transform rootT = collision.gameObject.transform.root;
         GameObject go = rootT.gameObject;
+
+
 
         // checks if the current GameObject triggering Hero's collider is the same as the last
         // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject

@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            print("Enemy hit by non-ProjectileHero: " + otherGo.name);
+            print("Enemy hit by non-Projectile: " + otherGo.name);
         }
     }
 }
