@@ -39,15 +39,18 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
             direction = true;
         }
+
         else if (movement < 0f)
         {
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
             direction = false;
         }
+
         else
         {
             rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
         }
+
         if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround == true)
         {
             rigidBody.velocity = Vector2.up*jumpSpeed;
