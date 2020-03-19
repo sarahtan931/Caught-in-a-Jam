@@ -4,8 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
+    public float zoomSpeed = 60f;
     public float jumpSpeed = 8f;
     private float movement = 0f;
+
     private Rigidbody2D rigidBody;
     // Use this for initialization
     public GameObject projectilePrefab;
@@ -86,9 +88,9 @@ public class PlayerMovement : MonoBehaviour
  
     void onTriggerEnter2D(Collider2D collision)
     {
+        
         Transform rootT = collision.gameObject.transform.root;
         GameObject go = rootT.gameObject;
-
         // checks if the current GameObject triggering Hero's collider is the same as the last
         // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject
         if (go == _lastTriggerGo)
