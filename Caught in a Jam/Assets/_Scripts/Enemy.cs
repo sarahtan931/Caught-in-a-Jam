@@ -8,10 +8,10 @@ public class Enemy : MonoBehaviour
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
     private Vector3 startPos;
-   
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
+    
     public float delta = 0.5f;
    
     
@@ -28,16 +28,15 @@ public class Enemy : MonoBehaviour
     {
         Vector3 v = startPos;
         v.x += delta * Mathf.Sin(Time.time * speed);
-         transform.position = v;
-        
+        transform.position = v;
         timer = Time.deltaTime;
-       if (timer > 2)
-       {
-           return;
-       }
-       else
-       {
-        UpdateMovement();
+        if (timer > 2)
+        {
+            return;
+        }
+        else
+        {
+           UpdateMovement();
 
         }
         
@@ -52,13 +51,13 @@ public class Enemy : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
        }
-       else if (this.transform.position.x < -1.2f)
+        else if (this.transform.position.x < -1.2f)
        {
             MovingDirection = Vector3.right;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
-     }
-     this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+        }
+        this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
     }
 
      void OnCollisionEnter2D(Collision2D coll) 
