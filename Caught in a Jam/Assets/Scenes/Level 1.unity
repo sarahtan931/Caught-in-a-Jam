@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  zoomSpeed: 1000
   jumpSpeed: 120
   projectilePrefab: {fileID: 9109571373432424586, guid: 64e4b5129a3e82e49ab97399c6c2db72,
     type: 3}
@@ -389,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 8960140524886585417, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8960140524886585417, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
@@ -448,7 +447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496065191117463086, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
-<<<<<<< HEAD
       propertyPath: movement
       value: 1
       objectReference: {fileID: 0}
@@ -461,10 +459,6 @@ PrefabInstance:
         type: 3}
       propertyPath: delta
       value: 14
-=======
-      propertyPath: speed
-      value: 30
->>>>>>> a31571e9c5cae04c911801c014e848640843e8f0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1381798ef4efe44cb17c093cddb0eec, type: 3}
@@ -1309,20 +1303,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4496065191117463086, guid: d1381798ef4efe44cb17c093cddb0eec,
-        type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 590982912521659825, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
       propertyPath: m_BodyType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4526948453171279665, guid: d1381798ef4efe44cb17c093cddb0eec,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4496065191117463086, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
@@ -3936,7 +3920,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496065191117463086, guid: d1381798ef4efe44cb17c093cddb0eec,
         type: 3}
-<<<<<<< HEAD
       propertyPath: movement
       value: 1
       objectReference: {fileID: 0}
@@ -3954,10 +3937,6 @@ PrefabInstance:
         type: 3}
       propertyPath: delta
       value: 7
-=======
-      propertyPath: speed
-      value: 50
->>>>>>> a31571e9c5cae04c911801c014e848640843e8f0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1381798ef4efe44cb17c093cddb0eec, type: 3}
