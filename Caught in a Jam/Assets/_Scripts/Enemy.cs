@@ -9,9 +9,6 @@ public class Enemy : MonoBehaviour
     float timer = 0;
     private int health = 10;
     private float _destroyEnemy = 3;
-    
-    private Vector3 MovingDirection = Vector3.left;
-    float timer = 0;
     private Vector3 startPos;
 
     [Header("Set in Inspector: Enemy")]
