@@ -60,6 +60,6 @@ public class GetMainChar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //stats.text = "Strength: " + strength + "/10, Defense: " + defense + "/10";
+        stats.text = "Strength: " + strength + "/10, Defense: " + defense + "/10";
     }
 }
