@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private GameObject _lastTriggerGo = null;
+    
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
-    private int health = 10;
-    private float _destroyEnemy = 3;
     private Vector3 startPos;
    
 
@@ -63,31 +61,17 @@ public class Enemy : MonoBehaviour
      this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Transform rootT = collision.gameObject.transform.root;
-        GameObject go = rootT.gameObject;
-
-
-
-        // checks if the current GameObject triggering Hero's collider is the same as the last
-        // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject
-        if (go == _lastTriggerGo)
+     void OnCollisionEnter2D(Collision2D coll) 
+     {
+        GameObject otherGo = coll.gameObject;
+        if (otherGo.tag == "Projectile" || otherGo.tag == "Enemy")
         {
-            return;
+            Destroy(otherGo); //destroy the projectile 
+            Destroy(gameObject); //destroy this enemy game object 
         }
-        _lastTriggerGo = go;
-
-        // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
-        if (go.tag == "Projectile")
+        else
         {
-            health--;
-            Destroy(go);
-        }
-
-        if (health <= 0)
-        {
-            Destroy(this.gameObject);
+            print("Enemy hit by non-Projectile: " + otherGo.name);
         }
     }
 }
