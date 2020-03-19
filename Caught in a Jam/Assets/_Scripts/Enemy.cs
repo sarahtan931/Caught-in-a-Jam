@@ -4,60 +4,90 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private GameObject _lastTriggerGo = null;
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
+    private int health = 10;
+    private float _destroyEnemy = 3;
+    private Vector3 startPos;
+   
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
+    public float delta = 0.5f;
+   
+    
 
     // Update is called once per frame
-    void Update()
-    {
 
-        timer = Time.deltaTime;
-        if (timer > 2)
-        {
-            return;
-        }
-        else
-        {
-            UpdateMovement();
-        }
-
-    }
     void Start()
     {
+        startPos = transform.position;
         timer = 0;
     }
+    
+    void Update()
+    {
+        Vector3 v = startPos;
+        v.x += delta * Mathf.Sin(Time.time * speed);
+         transform.position = v;
+        
+        timer = Time.deltaTime;
+       if (timer > 2)
+       {
+           return;
+       }
+       else
+       {
+        UpdateMovement();
+
+        }
+        
+    }
+    
 
     public virtual void UpdateMovement()
     {
-        if (this.transform.position.x > 1f)
-        {
-            MovingDirection = Vector3.left;
+      if (this.transform.position.x > 1f)
+    {
+      MovingDirection = Vector3.left;
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
-        }
-        else if (this.transform.position.x < -1.2f)
-        {
+       }
+       else if (this.transform.position.x < -1.2f)
+       {
             MovingDirection = Vector3.right;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
-        }
-        this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+     }
+     this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
     }
 
-     void OnCollisionEnter2D(Collision2D coll) 
-     {
-        GameObject otherGo = coll.gameObject;
-        if (otherGo.tag == "Projectile" || otherGo.tag == "Enemy")
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Transform rootT = collision.gameObject.transform.root;
+        GameObject go = rootT.gameObject;
+
+
+
+        // checks if the current GameObject triggering Hero's collider is the same as the last
+        // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject
+        if (go == _lastTriggerGo)
         {
-            Destroy(otherGo); //destroy the projectile 
-            Destroy(gameObject); //destroy this enemy game object 
+            return;
         }
-        else
+        _lastTriggerGo = go;
+
+        // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
+        if (go.tag == "Projectile")
         {
-            print("Enemy hit by non-Projectile: " + otherGo.name);
+            health--;
+            Destroy(go);
+        }
+
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
