@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
     private Vector3 startPos;
-    private int health = 10;
+    private int health = 2;
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
@@ -65,24 +65,23 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Transform rootT = collision.gameObject.transform.root;
-        GameObject go = rootT.gameObject;
-
-
+        GameObject go = collision.gameObject;
 
         // checks if the current GameObject triggering Hero's collider is the same as the last
         // if it is, the collision is ignored, if not it sets the lastTriggerGo to the current triggering Gameobject
-        if (go == _lastTriggerGo)
-        {
-            return;
-        }
-        _lastTriggerGo = go;
 
+        
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "Projectile")
         {
             health--;
             Destroy(go);
+        }
+
+        else if(go.tag == "Stick")
+        {
+            health--;
+            print(health);
         }
 
         if(health <= 0)
