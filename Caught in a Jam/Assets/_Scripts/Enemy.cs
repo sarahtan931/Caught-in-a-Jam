@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
     private Vector3 startPos;
-    private int health = 2;
+    private int health = 5;
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 
     private GameObject _lastTriggerGo = null;
 
+    private readonly string selectedCharacter = "SelectedCharacter";
 
 
     // Update is called once per frame
@@ -84,7 +85,30 @@ public class Enemy : MonoBehaviour
             print(health);
         }
 
+        
+
         if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject go = collision.gameObject;
+
+        if (go.tag == "Player" && PlayerPrefs.GetInt(selectedCharacter) == 1)
+        {
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                print(point.normal.y);
+                if (point.normal.y < 0f)
+                {
+                    health--;
+                }
+            }
+        }
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
