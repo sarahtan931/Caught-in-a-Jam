@@ -6,8 +6,8 @@ using UnityEngine;
 public class GetMainChar : MonoBehaviour
 {
 
-    public Sprite strawberry, peach, apple, blueberry;
-    public static SpriteRenderer mySprite;
+    public Sprite strawberry,blueberry;
+    private SpriteRenderer mySprite;
     private readonly string selectedCharacter = "SelectedCharacter";
 
     private void Awake()
@@ -26,17 +26,12 @@ public class GetMainChar : MonoBehaviour
         switch (getCharacter)
         {
             case 1:
-                mySprite.sprite = peach;
-                break;
-            case 2:
-                mySprite.sprite = apple;
-                break;
-            case 3:
                 mySprite.sprite = strawberry;
                 break;
-            case 4:
+            case 2:
                 mySprite.sprite = blueberry;
                 break;
+           
             default:
                 break;
         }
