@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
-    private bool direction;
+    public static bool direction;
     private bool isOnGround = false;
 
     public static int health = 5;
