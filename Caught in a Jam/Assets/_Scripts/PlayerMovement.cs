@@ -92,4 +92,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // references the last GameObject that triggered Hero's collider
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Transform rootT = collision.gameObject.transform.root;
+        GameObject go = rootT.gameObject;
+       
+        // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
+        if (go.tag == "pickUp")
+        {
+   
+            Destroy(go);
+        }
+
+        
+    }
 }
