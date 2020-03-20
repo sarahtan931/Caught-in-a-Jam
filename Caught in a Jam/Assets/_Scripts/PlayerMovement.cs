@@ -15,11 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     public static int health = 5;
 
+    private Rigidbody2D combatJump;
+
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         direction = false;
+
+        combatJump = this.GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,7 +35,14 @@ public class PlayerMovement : MonoBehaviour
 
         if(collision.gameObject.tag == "Enemy")
         {
-            health--;
+            foreach (ContactPoint2D point in collision.contacts)
+                if (point.normal.y >= 0.9f) {
+                    Vector2 velocity = combatJump.velocity;
+                    velocity.y = jumpSpeed;
+                    combatJump.velocity = velocity;
+                    Destroy(collision.collider.gameObject);
+                }
+                else { health--; }
         }
 
         if (health <= 0)
