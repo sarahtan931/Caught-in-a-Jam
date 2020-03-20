@@ -4,40 +4,53 @@ using UnityEngine;
 
 public class Stick : MonoBehaviour
 {
+    private GameObject stick;
     private bool stickDirection;
     private GameObject player;
+    private readonly string selectedCharacter = "SelectedCharacter";
+
     // Start is called before the first frame update
     void Start()
     {
+        stick = this.gameObject;
         stickDirection = PlayerMovement.direction;
         player = this.transform.parent.gameObject;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        stickDirection = PlayerMovement.direction;
-
-        if(stickDirection == true)
+        if (PlayerPrefs.GetInt(selectedCharacter) != 4)
         {
-            this.gameObject.transform.position = new Vector2(6 + player.transform.position.x, -2 + player.transform.position.y);
+            stick.SetActive(false);
         }
 
-        if (stickDirection == false)
-        {
-            this.gameObject.transform.position = new Vector2(-6 + player.transform.position.x, -2 + player.transform.position.y);
-        }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        // Update is called once per frame
+        void Update()
         {
-            if (stickDirection == true)
+            if (stick.activeSelf)
             {
-                this.gameObject.transform.position = new Vector2(12 + player.transform.position.x, -2 + player.transform.position.y);
-            }
+                stickDirection = PlayerMovement.direction;
 
-            if (stickDirection == false)
-            {
-                this.gameObject.transform.position = new Vector2(-12 + player.transform.position.x, -2 + player.transform.position.y);
+                if (stickDirection == true)
+                {
+                    this.gameObject.transform.position = new Vector2(6 + player.transform.position.x, -2 + player.transform.position.y);
+                }
+
+                if (stickDirection == false)
+                {
+                    this.gameObject.transform.position = new Vector2(-6 + player.transform.position.x, -2 + player.transform.position.y);
+                }
+
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (stickDirection == true)
+                    {
+                        this.gameObject.transform.position = new Vector2(12 + player.transform.position.x, -2 + player.transform.position.y);
+                    }
+
+                    if (stickDirection == false)
+                    {
+                        this.gameObject.transform.position = new Vector2(-12 + player.transform.position.x, -2 + player.transform.position.y);
+                    }
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ public class GetMainChar : MonoBehaviour
 {
 
     public Sprite strawberry, peach, apple, blueberry;
-    private SpriteRenderer mySprite;
+    public static SpriteRenderer mySprite;
     private readonly string selectedCharacter = "SelectedCharacter";
 
     private void Awake()
