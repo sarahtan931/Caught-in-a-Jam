@@ -9,6 +9,7 @@ TagManager:
   - Grass
   - pickUp
   - Stick
+  - Key
   layers:
   - Default
   - TransparentFX

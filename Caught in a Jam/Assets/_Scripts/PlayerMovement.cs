@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PlayerMovement : MonoBehaviour
 {
     //FINAL VERSION
@@ -14,7 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public static bool direction;
     private bool isOnGround = false;
 
+    public GameObject doorPrefabVar;
+    private GameObject door;
+
     public static int health = 5;
+    public static int key = 0;
     private readonly string selectedCharacter = "SelectedCharacter";
 
 
@@ -22,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         direction = false;
+      
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -116,10 +123,43 @@ public class PlayerMovement : MonoBehaviour
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "pickUp")
         {
-   
+            //key++;
+            //getDoor();
             Destroy(go);
+            
         }
 
-        
+        if (go.tag == "Key")
+        {
+            print("Picked up key");
+            key++;
+            getDoor();
+            Destroy(go);
+          
+        }
+
+        if(go.tag == "Door")
+        {
+            LoadNextScene();
+        }
     }
+
+    public void getDoor()
+    {
+        Vector3 keyPosition = new Vector3(0, 0, 0);
+
+        if (key >= 3)
+        {
+            door = Instantiate(doorPrefabVar);
+            door.transform.position = door.transform.position + keyPosition;
+        }
+    }
+
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+
 }
