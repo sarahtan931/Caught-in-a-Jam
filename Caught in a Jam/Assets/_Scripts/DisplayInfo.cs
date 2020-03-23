@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DisplayInfo : MonoBehaviour
 {
-    private int healthTrack = PlayerMovement.health;
+  //  private int healthTrack = PlayerMovement.health;
     private Text healthText;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class DisplayInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      healthTrack = PlayerMovement.health;
-      healthText.text = "Health: " + healthTrack + "/5";
+    //  healthTrack = PlayerMovement.health;
+     // healthText.text = "Health: " + healthTrack + "/5";
     }
 }

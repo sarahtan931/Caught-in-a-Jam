@@ -10,6 +10,7 @@ TagManager:
   - pickUp
   - Stick
   - Key
+  - Door
   layers:
   - Default
   - TransparentFX

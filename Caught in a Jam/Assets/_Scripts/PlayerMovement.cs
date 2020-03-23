@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,15 +20,23 @@ public class PlayerMovement : MonoBehaviour
     public GameObject doorPrefabVar;
     private GameObject door;
 
-    public static int health = 5;
+    public Slider slider;
+
+
+    public int maxHealth = 5;
+    public int health = 0;
     public static int key = 0;
     private readonly string selectedCharacter = "SelectedCharacter";
+
+    public HealthBar healthBar;
 
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         direction = false;
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
       
     }
 
@@ -51,10 +60,15 @@ public class PlayerMovement : MonoBehaviour
                         rigidBody.velocity = velocity;
 
                     }
-                    else { health--; }
+                    else { 
+                        //health--;
+                        TakeDamage(1);
+                    }
                 }
             }
-            else { health--; }
+            else { //health--;
+                TakeDamage(1);
+            }
         }
 
         if (health <= 0)
@@ -123,8 +137,6 @@ public class PlayerMovement : MonoBehaviour
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "pickUp")
         {
-            //key++;
-            //getDoor();
             Destroy(go);
             
         }
@@ -159,6 +171,12 @@ public class PlayerMovement : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
+   void TakeDamage(int damage)
+    {
+        health = health - damage;
+        healthBar.SetHealth(health);
     }
 
 
