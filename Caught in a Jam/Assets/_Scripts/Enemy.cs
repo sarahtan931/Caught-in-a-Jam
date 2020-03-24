@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class Enemy : MonoBehaviour
     private Vector3 MovingDirection = Vector3.left;
     float timer = 0;
     private Vector3 startPos;
-    private int health = 5;
+  
+    public Slider slider;
+
+    public int maxHealth = 5;
+    public int health = 5;
+    public HealthBar healthBar;
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
@@ -26,6 +32,8 @@ public class Enemy : MonoBehaviour
     {
         startPos = transform.position;
         timer = 0;
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
     
     void Update()
@@ -75,14 +83,16 @@ public class Enemy : MonoBehaviour
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "Projectile")
         {
-            health--;
+          //  health--;
             Destroy(go);
+            TakeDamage(1);
         }
 
         else if(go.tag == "Stick")
         {
-            health--;
+           // health--;
             print(health);
+            TakeDamage(1);
         }
 
         
@@ -104,7 +114,7 @@ public class Enemy : MonoBehaviour
                 print(point.normal.y);
                 if (point.normal.y < 0f)
                 {
-                    health--;
+                    TakeDamage(1);
                 }
             }
         }
@@ -113,6 +123,12 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void TakeDamage(int damage)
+    {
+        health = health - damage;
+        healthBar.SetHealth(health);
+    }
+
 }
 
-   
