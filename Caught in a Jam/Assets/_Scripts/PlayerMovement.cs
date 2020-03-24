@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     public static bool direction;
+    private float increaseSpeed = 0;
     private bool isOnGround = false;
 
     public GameObject doorPrefabVar;
@@ -150,6 +151,11 @@ public class PlayerMovement : MonoBehaviour
         if (go.tag == "pickUp")
         {
             Destroy(go);
+            increaseSpeed++;
+            if (increaseSpeed == 3)
+            {
+                speed = 130f;
+            }
             
         }
 
