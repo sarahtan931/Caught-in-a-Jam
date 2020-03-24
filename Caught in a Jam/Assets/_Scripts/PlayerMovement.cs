@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     //FINAL VERSION
-    public float speed = 5f;
+    public float speed = 70f;
     public float jumpSpeed = 8f;
     private float movement = 0f;
     private Rigidbody2D rigidBody;
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly string selectedCharacter = "SelectedCharacter";
 
     public HealthBar healthBar;
+    public SpeedBar speedBar;
 
 
     void Start()
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         direction = false;
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        SetStats();
       
     }
 
@@ -44,11 +46,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(selectedCharacter) == 1)
         {
-
+            speed = 60f;
+            speedBar.SetMinSpeed(speed);
         }
         if (PlayerPrefs.GetInt(selectedCharacter) == 2)
         {
-
+            speed = 80f;
+            speedBar.SetMinSpeed(speed);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -150,6 +154,7 @@ public class PlayerMovement : MonoBehaviour
         if (go.tag == "pickUp")
         {
             Destroy(go);
+            SetSpeed(2);
             
         }
 
@@ -189,6 +194,13 @@ public class PlayerMovement : MonoBehaviour
     {
         health = health - damage;
         healthBar.SetHealth(health);
+    }
+
+    void SetSpeed(int s)
+    {
+        speed += s;
+        speedBar.SetSpeed(speed);
+
     }
 
     public void LoadGameOverScene()
