@@ -40,6 +40,17 @@ public class PlayerMovement : MonoBehaviour
       
     }
 
+    public void SetStats()
+    {
+        if (PlayerPrefs.GetInt(selectedCharacter) == 1)
+        {
+
+        }
+        if (PlayerPrefs.GetInt(selectedCharacter) == 2)
+        {
+
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Grass")
@@ -184,6 +195,5 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
 
 }
