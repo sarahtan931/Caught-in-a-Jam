@@ -171,6 +171,11 @@ public class PlayerMovement : MonoBehaviour
         {
             LoadNextScene();
         }
+
+        if (go.tag == "Teleport")
+        {
+            transform.position = go.transform.GetChild(0).position;
+        }
     }
 
     public void getDoor()

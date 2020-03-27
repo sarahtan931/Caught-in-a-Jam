@@ -11,6 +11,7 @@ TagManager:
   - Stick
   - Key
   - Door
+  - Teleport
   layers:
   - Default
   - TransparentFX
