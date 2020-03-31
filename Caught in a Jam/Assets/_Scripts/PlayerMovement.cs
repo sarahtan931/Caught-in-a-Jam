@@ -59,7 +59,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Grass")
         {
-            isOnGround = true;
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                if (point.normal.y >= 0.9f)
+                {
+                    isOnGround = true;
+
+                }
+            }
         }
 
         if(collision.gameObject.tag == "Enemy")
