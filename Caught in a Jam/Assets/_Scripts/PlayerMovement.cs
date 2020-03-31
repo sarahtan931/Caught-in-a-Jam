@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject doorPrefabVar;
     private GameObject door;
+    public GameObject keyPrefabVar;
 
     public Slider slider;
 
@@ -69,7 +70,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Friend")
+        {
+            Destroy(collision.gameObject);
+            Instantiate(keyPrefabVar, new Vector3(196.15f, -125.6f, 0), Quaternion.identity);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
         {
             if (PlayerPrefs.GetInt(selectedCharacter) == 1)
             {
@@ -177,6 +184,11 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "Door")
         {
             LoadNextScene();
+        }
+
+        if (go.tag == "Teleport")
+        {
+            transform.position = go.transform.GetChild(0).position;
         }
     }
 

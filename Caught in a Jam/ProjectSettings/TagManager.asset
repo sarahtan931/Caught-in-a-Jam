@@ -11,6 +11,9 @@ TagManager:
   - Stick
   - Key
   - Door
+  - Teleport
+  - Axe
+  - Friend
   layers:
   - Default
   - TransparentFX

@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         startPos = transform.position;
         timer = 0;
         health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
     
     void Update()
