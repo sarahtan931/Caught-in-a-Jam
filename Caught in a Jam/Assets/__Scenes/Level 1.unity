@@ -354,12 +354,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
-  jumpSpeed: 120
+  jumpSpeed: 140
   projectilePrefab: {fileID: 9109571373432424586, guid: 64e4b5129a3e82e49ab97399c6c2db72,
     type: 3}
   projectileSpeed: 100
   doorPrefabVar: {fileID: 499364955215470083, guid: 535670f7134f53d4997f34dc59135d7f,
     type: 3}
+  keyPrefabVar: {fileID: 0}
   slider: {fileID: 1280357139}
   maxHealth: 5
   health: 0

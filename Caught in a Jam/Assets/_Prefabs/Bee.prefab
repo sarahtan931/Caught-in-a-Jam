@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2476873060558336267}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Enemy
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,12 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7a2e12d2bb9d64a8cd71c073d30410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  maxHealth: 5
-  health: 5
-  healthBar: {fileID: 0}
-  speed: 3
-  delta: 40
   slider: {fileID: 0}
   maxHealth: 5
   health: 5

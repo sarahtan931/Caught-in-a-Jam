@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     {
         startPos = transform.position;
         timer = 0;
+        SetStats();
         health = maxHealth;
         //healthBar.SetMaxHealth(maxHealth);
     }
@@ -53,7 +54,22 @@ public class Enemy : MonoBehaviour
         }
         
     }
-    
+
+    public void SetStats()
+    {
+        if (this.gameObject.tag == "Ladybug")
+        {
+            maxHealth = 3;
+        }
+        if (this.gameObject.tag == "Grasshopper")
+        {
+            maxHealth = 5;
+        }
+        if (this.gameObject.tag == "Bee")
+        {
+            maxHealth = 4;
+        }
+    }
 
     public virtual void UpdateMovement()
     {
@@ -85,14 +101,14 @@ public class Enemy : MonoBehaviour
         {
           //  health--;
             Destroy(go);
-            TakeDamage(1);
+            TakeDamage(PlayerMovement.strength);
         }
 
         else if(go.tag == "Stick")
         {
            // health--;
             print(health);
-            TakeDamage(1);
+            TakeDamage(PlayerMovement.strength);
         }
 
         
@@ -114,7 +130,7 @@ public class Enemy : MonoBehaviour
                 print(point.normal.y);
                 if (point.normal.y < 0f)
                 {
-                    TakeDamage(1);
+                    TakeDamage(PlayerMovement.strength);                                                                                                                        
                 }
             }
         }

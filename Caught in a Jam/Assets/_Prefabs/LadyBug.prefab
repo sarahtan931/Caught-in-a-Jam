@@ -391,8 +391,8 @@ GameObject:
   - component: {fileID: 2534268082942402402}
   - component: {fileID: 1570317100425055714}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: LadyBug
+  m_TagString: Ladybug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

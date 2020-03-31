@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1747337198683833850, guid: f59a175855af933469fdd46c3b7a231e,
         type: 3}
       propertyPath: m_Name
-      value: Sunshine
+      value: Sunshine Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1747337198683833849, guid: f59a175855af933469fdd46c3b7a231e,
         type: 3}

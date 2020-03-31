@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     //FINAL VERSION
-    public float speed = 70f;
+    public static float speed = 70f;
     public float jumpSpeed = 8f;
+    public static int strength = 1;
     private float movement = 0f;
     private Rigidbody2D rigidBody;
     // Use this for initialization
@@ -49,11 +50,15 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 60f;
             speedBar.SetMinSpeed(speed);
+
+            strength = 1;
         }
         if (PlayerPrefs.GetInt(selectedCharacter) == 2)
         {
             speed = 80f;
             speedBar.SetMinSpeed(speed);
+
+            strength = 2;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(keyPrefabVar, new Vector3(196.15f, -125.6f, 0), Quaternion.identity);
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Ladybug" || collision.gameObject.tag == "Grasshopper" || collision.gameObject.tag == "Bee" )
         {
             if (PlayerPrefs.GetInt(selectedCharacter) == 1)
             {
@@ -165,11 +170,18 @@ public class PlayerMovement : MonoBehaviour
         GameObject go = rootT.gameObject;
        
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
-        if (go.tag == "pickUp")
+        if (go.tag == "Water")
         {
             Destroy(go);
             SetSpeed(2);
             
+        }
+
+        if (go.tag == "Sunshine")
+        {
+            Destroy(go);
+            SetStrength(2);
+
         }
 
         if (go.tag == "Key")
@@ -220,6 +232,11 @@ public class PlayerMovement : MonoBehaviour
         speed += s;
         speedBar.SetSpeed(speed);
 
+    }
+
+    void SetStrength(int s)
+    {
+        strength += s;
     }
 
     public void LoadGameOverScene()
