@@ -60,13 +60,13 @@ public class FlyingEnemy : MonoBehaviour
         if (this.transform.position.y > 1f)
         {
             MovingDirection = Vector3.up;
-           
+
 
         }
         else if (this.transform.position.y < -1.2f)
         {
             MovingDirection = Vector3.down;
-        
+
 
         }
         this.transform.Translate(MovingDirection * Time.smoothDeltaTime);

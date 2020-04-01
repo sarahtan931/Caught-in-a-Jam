@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 6157606423700733497}
   - component: {fileID: 6157606423700733494}
   - component: {fileID: 6157606423700733495}
-  - component: {fileID: 6157606423700733492}
+  - component: {fileID: 1147527722866117733}
   m_Layer: 0
   m_Name: 'Bee '
   m_TagString: Enemy
@@ -508,7 +508,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6157606423700733492
+--- !u!114 &1147527722866117733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -524,5 +524,5 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   healthBar: {fileID: 6157606422441624753}
-  speed: 3
-  delta: 40
+  speed: 2
+  delta: 30

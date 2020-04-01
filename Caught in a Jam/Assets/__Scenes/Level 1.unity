@@ -359,7 +359,8 @@ MonoBehaviour:
   projectileSpeed: 100
   doorPrefabVar: {fileID: 499364955215470083, guid: 535670f7134f53d4997f34dc59135d7f,
     type: 3}
-  keyPrefabVar: {fileID: 0}
+  keyPrefabVar: {fileID: 5400946627705987718, guid: 4d2239341397a99439dd5c99ead3a6de,
+    type: 3}
   slider: {fileID: 1280357139}
   maxHealth: 5
   health: 0

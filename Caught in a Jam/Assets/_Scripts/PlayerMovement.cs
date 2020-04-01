@@ -208,6 +208,12 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = go.transform.GetChild(0).position;
         }
+
+        if(go.tag == "EnemyProjectile")
+        {
+            Destroy(go);
+            TakeDamage(1);
+        }
     }
 
     public void getDoor()

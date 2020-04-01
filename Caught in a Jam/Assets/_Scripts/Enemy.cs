@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     
     public float delta = 0.5f;
 
-    private GameObject _lastTriggerGo = null;
+    
 
     private readonly string selectedCharacter = "SelectedCharacter";
 
