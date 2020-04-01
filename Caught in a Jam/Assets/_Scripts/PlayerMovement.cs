@@ -22,8 +22,6 @@ public class PlayerMovement : MonoBehaviour
     private GameObject door;
     public GameObject keyPrefabVar;
 
-    public Slider slider;
-
 
     public int maxHealth = 5;
     public int health = 0;
