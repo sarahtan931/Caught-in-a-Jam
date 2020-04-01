@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     public HealthBar healthBar;
     public SpeedBar speedBar;
+    public StrengthBar strengthBar;
+   
 
 
     void Start()
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         direction = false;
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        strength = 1;
+        strengthBar.SetMinStrength(strength);
         SetStats();
       
     }
@@ -52,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
             speedBar.SetMinSpeed(speed);
 
             strength = 1;
+            strengthBar.SetMinStrength(strength);
         }
         if (PlayerPrefs.GetInt(selectedCharacter) == 2)
         {
@@ -59,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             speedBar.SetMinSpeed(speed);
 
             strength = 2;
+            strengthBar.SetMinStrength(strength);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -227,6 +233,7 @@ public class PlayerMovement : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
+  
     void SetSpeed(int s)
     {
         speed += s;
@@ -237,6 +244,7 @@ public class PlayerMovement : MonoBehaviour
     void SetStrength(int s)
     {
         strength += s;
+        strengthBar.SetStrength(strength);
     }
 
     public void LoadGameOverScene()
