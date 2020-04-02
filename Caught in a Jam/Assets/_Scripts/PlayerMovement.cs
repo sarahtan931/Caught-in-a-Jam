@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar healthBar;
     public SpeedBar speedBar;
     public StrengthBar strengthBar;
-   
-
 
     void Start()
     {
@@ -189,11 +187,17 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        if(go.tag == "Heart")
+        {
+            Destroy(go);
+            SetHealth(1);
+        }
+
         if (go.tag == "Key")
         {
             print("Picked up key");
             key++;
-            getDoor();
+            GetDoor();
             Destroy(go);
           
         }
@@ -218,12 +222,12 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "Friend")
         {
             friend++;
-            getDoor();
+            GetDoor();
             Destroy(go);
         }
     }
 
-    public void getDoor()
+    public void GetDoor()
     {
         Vector3 keyPosition = new Vector3(0, 0, 0);
 
@@ -254,7 +258,14 @@ public class PlayerMovement : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
-  
+   void SetHealth(int s)
+    {
+        if (health < 5)
+        {
+            health += s;
+            healthBar.SetHealth(health);
+        }
+    }
     void SetSpeed(int s)
     {
         speed += s;
@@ -272,5 +283,4 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
 }
