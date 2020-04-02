@@ -4,45 +4,57 @@ using UnityEngine;
 
 public class Axe : MonoBehaviour
 {
-    float throwForce = 600;
-    Vector2 objectPos;
-    public bool isHolding = false;
-    public GameObject axe;
+    public GameObject item;
     public GameObject tempParent;
+    public Transform guide;
+    bool carrying;
+
     // Start is called before the first frame update
 
-    private void Update()
+    private void Start()
     {
-        if (isHolding == true)
+        item.GetComponent<Rigidbody2D>().simulated = true;
+    }
+    void Update()
+    {
+        if (carrying)
         {
-            axe.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            axe.transform.SetParent(tempParent.transform);
-
-            if (Input.GetMouseButtonDown(1))
-            {
-                //throw
-                axe.GetComponent<Rigidbody2D>().AddForce(tempParent.transform.forward * throwForce);
-                isHolding = false;
-            }
+            Carry(item);
+            Drop();
         }
         else
         {
-            objectPos = axe.transform.position;
-            axe.transform.SetParent(null);
-            axe.GetComponent<Rigidbody2D>().gravityScale =1;
-            axe.transform.position = objectPos;
+            PickUp();
         }
     }
-    void OnMouseDown()
+
+    void Carry(GameObject c)
     {
-        isHolding = true;
-        axe.GetComponent<Rigidbody2D>().gravityScale = 0;
+        c.GetComponent<Rigidbody2D>().isKinematic = true;
+    }
+    void PickUp()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            carrying = true;
+            item.GetComponent<Rigidbody2D>().gravityScale = 0;
+            item.GetComponent<Rigidbody2D>().isKinematic = false;
+            item.transform.position = guide.transform.position;
+            item.transform.rotation = guide.transform.rotation;
+            item.transform.parent = tempParent.transform;
+        }
     }
 
     // Update is called once per frame
-    void OnMouseUp()
+    void Drop()
     {
-        isHolding = false;
-        axe.GetComponent<Rigidbody>().useGravity = true;
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            carrying = false;
+            item.GetComponent<Rigidbody2D>().gravityScale = 3;
+            item.isStatic = true;
+            item.transform.parent = null;
+            item.transform.position = guide.transform.position;
+        }
     }
 }
