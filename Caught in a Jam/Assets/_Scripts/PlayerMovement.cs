@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(keyPrefabVar, new Vector3(196.15f, -125.6f, 0), Quaternion.identity);
         }
 
-        if (collision.gameObject.tag == "Ladybug" || collision.gameObject.tag == "Grasshopper" || collision.gameObject.tag == "Bee" )
+        if (collision.gameObject.tag == "Ladybug" || collision.gameObject.tag == "Grasshopper" || collision.gameObject.tag == "Bee" || collision.gameObject.tag == "Caterpillar")
         {
             if (PlayerPrefs.GetInt(selectedCharacter) == 1)
             {
