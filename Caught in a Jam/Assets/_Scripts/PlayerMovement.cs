@@ -210,7 +210,8 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "EnemyProjectile")
         {
             Destroy(go);
-            TakeDamage(1);
+            speedBar.SetSpeed(60);
+           // TakeDamage(1);
         }
     }
 
