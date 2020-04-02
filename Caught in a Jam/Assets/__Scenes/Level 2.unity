@@ -665,7 +665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 85.22, y: -51.04}
+  m_AnchoredPosition: {x: 85.22, y: -60.04}
   m_SizeDelta: {x: 1162.66, y: 228.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344261841
@@ -1779,6 +1779,7 @@ RectTransform:
   - {fileID: 959709602}
   - {fileID: 344261840}
   - {fileID: 1883821917}
+  - {fileID: 1999464384}
   m_Father: {fileID: 462068900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1884,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -203.03, y: 138.54}
+  m_AnchoredPosition: {x: -231.68, y: 126}
   m_SizeDelta: {x: 113.42, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959709603
@@ -3458,6 +3459,7 @@ MonoBehaviour:
   tempParent: {fileID: 836269886}
   guide: {fileID: 836269887}
   pickUpText: {fileID: 1883821916}
+  doorText: {fileID: 1999464383}
 --- !u!1 &1668287813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,7 +3738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.24, y: -19.925}
+  m_AnchoredPosition: {x: 89.315, y: -36.8}
   m_SizeDelta: {x: 170.73, y: 30.159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800390827
@@ -4067,7 +4069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1441171a7a403b447ae5f855d3c1f4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 10
 --- !u!114 &1883821919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4182,6 +4184,97 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967843193}
+  m_CullTransparentMesh: 0
+--- !u!1 &1999464383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999464384}
+  - component: {fileID: 1999464387}
+  - component: {fileID: 1999464386}
+  - component: {fileID: 1999464385}
+  m_Layer: 5
+  m_Name: BreakDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1999464384
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999464383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 895849334}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 32, y: -143}
+  m_SizeDelta: {x: 474.15, y: 51.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1999464385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999464383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1441171a7a403b447ae5f855d3c1f4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+--- !u!114 &1999464386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999464383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 12
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Hit the door at least three times!
+--- !u!222 &1999464387
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999464383}
   m_CullTransparentMesh: 0
 --- !u!1001 &2008515954
 PrefabInstance:

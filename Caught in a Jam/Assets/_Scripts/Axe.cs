@@ -11,11 +11,13 @@ public class Axe : MonoBehaviour
     float health = 4;
 
     public GameObject pickUpText;
+    public GameObject doorText;
     // Start is called before the first frame update
 
     private void Start()
     {
         pickUpText.SetActive(false);
+        doorText.SetActive(false);
         item.GetComponent<Rigidbody2D>().simulated = true;
     }
 
@@ -28,6 +30,7 @@ public class Axe : MonoBehaviour
 
         if (other.gameObject.CompareTag("FriendDoor"))
         {
+            doorText.SetActive(true);
             health--;
             if (health == 0)
             {
