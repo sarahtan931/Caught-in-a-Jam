@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar healthBar;
     public SpeedBar speedBar;
     public StrengthBar strengthBar;
-   
-
 
     void Start()
     {
@@ -193,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
         {
             print("Picked up key");
             key++;
-            getDoor();
+            GetDoor();
             Destroy(go);
           
         }
@@ -218,12 +216,12 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "Friend")
         {
             friend++;
-            getDoor();
+            GetDoor();
             Destroy(go);
         }
     }
 
-    public void getDoor()
+    public void GetDoor()
     {
         Vector3 keyPosition = new Vector3(0, 0, 0);
 
@@ -272,5 +270,4 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
 }

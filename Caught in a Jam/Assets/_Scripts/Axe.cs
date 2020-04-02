@@ -8,12 +8,36 @@ public class Axe : MonoBehaviour
     public GameObject tempParent;
     public Transform guide;
     bool carrying;
+    float health = 4;
 
+    public GameObject pickUpText;
+    public GameObject doorText;
     // Start is called before the first frame update
 
     private void Start()
     {
+        pickUpText.SetActive(false);
+        doorText.SetActive(false);
         item.GetComponent<Rigidbody2D>().simulated = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            pickUpText.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("FriendDoor"))
+        {
+            doorText.SetActive(true);
+            health--;
+            if (health == 0)
+            {
+                Destroy(other.gameObject);
+            }
+        }
+
     }
     void Update()
     {
