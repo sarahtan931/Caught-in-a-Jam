@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public int maxHealth = 5;
     public int health = 0;
     public static int key = 0;
+    public static int friend = 0;
     private readonly string selectedCharacter = "SelectedCharacter";
 
     public HealthBar healthBar;
@@ -213,18 +214,33 @@ public class PlayerMovement : MonoBehaviour
             speedBar.SetSpeed(60);
            // TakeDamage(1);
         }
+
+        if(go.tag == "Friend")
+        {
+            friend++;
+            getDoor();
+            Destroy(go);
+        }
     }
 
     public void getDoor()
     {
         Vector3 keyPosition = new Vector3(0, 0, 0);
 
+        if (friend > 3)
+        {
+
+            door = Instantiate(doorPrefabVar);
+            door.transform.position = door.transform.position;
+        }
         if (key >= 3)
         {
             door = Instantiate(doorPrefabVar);
             door.transform.position = door.transform.position + keyPosition;
         }
     }
+
+   
 
     public void LoadNextScene()
     {
