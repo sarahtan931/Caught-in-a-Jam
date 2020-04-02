@@ -20,6 +20,7 @@ TagManager:
   - Sunshine
   - Water
   - EnemyProjectile
+  - Heart
   layers:
   - Default
   - TransparentFX

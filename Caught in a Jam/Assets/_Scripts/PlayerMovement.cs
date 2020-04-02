@@ -189,6 +189,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        if(go.tag == "Heart")
+        {
+            Destroy(go);
+            SetHealth(1);
+        }
+
         if (go.tag == "Key")
         {
             print("Picked up key");
@@ -254,7 +260,14 @@ public class PlayerMovement : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
-  
+   void SetHealth(int s)
+    {
+        if (health < 5)
+        {
+            health += s;
+            healthBar.SetHealth(health);
+        }
+    }
     void SetSpeed(int s)
     {
         speed += s;
