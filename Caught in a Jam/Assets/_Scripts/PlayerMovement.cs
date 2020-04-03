@@ -156,8 +156,8 @@ public class PlayerMovement : MonoBehaviour
         if (go.tag == "Water")
         {
             Destroy(go);
-            SetSpeed(10);
-            speed += 10;
+            SetSpeed(5);
+            speed += 5;
         }
 
         if (go.tag == "Sunshine")
@@ -189,7 +189,9 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "EnemyProjectile")
         {
             Destroy(go);
-           // TakeDamage(1);
+            TakeDamage(1);
+            speed -= 10;
+            StatsSave.S.LoseSpeed();
         }
 
         if(go.tag == "Friend")

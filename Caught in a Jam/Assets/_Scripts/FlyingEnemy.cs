@@ -85,20 +85,20 @@ public class FlyingEnemy : MonoBehaviour
         {
             //  health--;
             Destroy(go);
-            TakeDamage(1);
+            TakeDamage(PlayerMovement.strength);
         }
 
         else if (go.tag == "Stick")
         {
-            // health--;
-            print(health);
-            TakeDamage(1);
+            // health--
+            TakeDamage(PlayerMovement.strength);
         }
 
 
 
         if (health <= 0)
         {
+            StatsSave.S.SetPoints();
             Destroy(this.gameObject);
         }
     }

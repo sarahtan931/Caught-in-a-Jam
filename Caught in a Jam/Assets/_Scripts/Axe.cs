@@ -32,7 +32,7 @@ public class Axe : MonoBehaviour
         {
             doorText.SetActive(true);
             health--;
-            if (health == 0)
+            if (health < 2)
             {
                 Destroy(other.gameObject);
                 doorText.SetActive(false);
