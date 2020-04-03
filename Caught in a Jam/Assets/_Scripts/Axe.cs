@@ -26,18 +26,18 @@ public class Axe : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             pickUpText.SetActive(true);
+            doorText.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("FriendDoor"))
         {
-            doorText.SetActive(true);
             health--;
             if (health == 0)
             {
                 Destroy(other.gameObject);
-                doorText.SetActive(false);
             }
         }
+
     }
 
     void Update()
