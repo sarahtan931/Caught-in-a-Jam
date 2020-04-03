@@ -1085,9 +1085,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Strength: 2/10
+  m_Text: 'Strength: 2
 
-    Defense: 2/10
+    Defense: 80
 
     Power up: Stick'
 --- !u!222 &1214064328
@@ -1677,9 +1677,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Strength: 1/10
+  m_Text: 'Strength: 1
 
-    Defense: 4/10
+    Speed: 60
 
     PowerUp: Stomping'
 --- !u!222 &1911555077
