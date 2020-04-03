@@ -60,7 +60,7 @@ public class StatsSave : MonoBehaviour
         strength += s;
     }
 
-    public void SetPoints()
+    public void SetPoints(int s)
     {
         points++;
     }

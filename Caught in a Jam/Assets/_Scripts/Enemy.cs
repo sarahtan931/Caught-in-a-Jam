@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     
     public float delta = 0.5f;
 
+    public int points = 0;
+
     
 
     private readonly string selectedCharacter = "SelectedCharacter";
@@ -111,11 +113,8 @@ public class Enemy : MonoBehaviour
             TakeDamage(PlayerMovement.strength);
         }
 
-        
-
         if(health <= 0)
         {
-            StatsSave.S.SetPoints();
             Destroy(this.gameObject);
         }
     }
@@ -137,7 +136,6 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
-            StatsSave.S.SetPoints();
             Destroy(this.gameObject);
         }
     }

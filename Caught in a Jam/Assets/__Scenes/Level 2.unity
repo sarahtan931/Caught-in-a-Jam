@@ -3885,9 +3885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 1663318972}
   tempParent: {fileID: 836269886}
-  guide: {fileID: 836269887}
   pickUpText: {fileID: 1883821916}
   doorText: {fileID: 1999464383}
+  guide: {fileID: 836269887}
 --- !u!1 &1668287813
 GameObject:
   m_ObjectHideFlags: 0

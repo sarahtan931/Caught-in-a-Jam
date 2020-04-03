@@ -98,7 +98,6 @@ public class FlyingEnemy : MonoBehaviour
 
         if (health <= 0)
         {
-            StatsSave.S.SetPoints();
             Destroy(this.gameObject);
         }
     }
