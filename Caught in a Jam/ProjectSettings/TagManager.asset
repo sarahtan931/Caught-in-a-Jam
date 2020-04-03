@@ -20,6 +20,9 @@ TagManager:
   - Sunshine
   - Water
   - EnemyProjectile
+  - FriendDoor
+  - Strength
+  - Speed
   layers:
   - Default
   - TransparentFX
