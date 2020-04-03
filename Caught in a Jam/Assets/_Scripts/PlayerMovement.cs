@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject keyPrefabVar;
 
 
-    public int maxHealth = 10;
-    public int health = 10;
+    public int maxHealth = 20;
+    public int health = 20;
     public static int key = 0;
     public static int friend = 0;
     private readonly string selectedCharacter = "SelectedCharacter";
