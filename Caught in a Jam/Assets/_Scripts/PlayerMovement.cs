@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject doorPrefabVar;
     private GameObject door;
     public GameObject keyPrefabVar;
-    public GameObject keyText;
+
 
     public int maxHealth = 5;
     public int health = 0;
@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        keyText.SetActive(false);
         rigidBody = GetComponent<Rigidbody2D>();
         direction = false;
         health = maxHealth;
@@ -59,11 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Friend")
         {
-            keyText.SetActive(true);
             Destroy(collision.gameObject);
             Instantiate(keyPrefabVar, new Vector3(196.15f, -125.6f, 0), Quaternion.identity);
-            Instantiate(keyPrefabVar, new Vector3(-89.15f, -96.6f, 0), Quaternion.identity);
-            Instantiate(keyPrefabVar, new Vector3(202f, -127f, 0), Quaternion.identity);
         }
 
         if (collision.gameObject.tag == "Ladybug" || collision.gameObject.tag == "Grasshopper" || collision.gameObject.tag == "Bee" || collision.gameObject.tag == "Caterpillar")
@@ -171,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (go.tag == "Key")
         {
-            keyText.SetActive(false);
             print("Picked up key");
             key++;
             GetDoor();
