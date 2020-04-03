@@ -20,25 +20,21 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
     
     public float delta = 0.5f;
-
-    
-
     private readonly string selectedCharacter = "SelectedCharacter";
-
-
     // Update is called once per frame
 
     void Start()
     {
+        //Setting the start postion and start stats of each enemy 
         startPos = transform.position;
         timer = 0;
         SetStats();
         health = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
     }
     
     void Update()
     {
+       //Moving the enemies side to side using a sin function 
         Vector3 v = startPos;
         v.x += delta * Mathf.Sin(Time.time * speed);
         transform.position = v;
@@ -57,6 +53,7 @@ public class Enemy : MonoBehaviour
 
     public void SetStats()
     {
+       //Setting the max health for each of the enemies 
         if (this.gameObject.tag == "Ladybug")
         {
             maxHealth = 10;
@@ -99,20 +96,15 @@ public class Enemy : MonoBehaviour
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "Projectile")
         {
-          //  health--;
             Destroy(go);
             TakeDamage(PlayerMovement.strength);
         }
 
         else if(go.tag == "Stick")
         {
-           // health--;
             print(health);
             TakeDamage(PlayerMovement.strength);
         }
-
-        
-
         if(health <= 0)
         {
             Destroy(this.gameObject);
