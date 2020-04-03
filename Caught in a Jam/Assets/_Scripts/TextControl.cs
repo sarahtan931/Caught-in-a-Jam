@@ -22,5 +22,10 @@ public class TextControl : MonoBehaviour
             print(textBox.gameObject.tag);
             textBox.text = "Strength: " + PlayerMovement.strength;
         }
+
+        if(textBox.gameObject.tag == "Points")
+        {
+            textBox.text = "Score: " + StatsSave.S.points;
+        }
     }
 }

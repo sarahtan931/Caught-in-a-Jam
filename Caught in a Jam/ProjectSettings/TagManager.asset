@@ -23,6 +23,7 @@ TagManager:
   - FriendDoor
   - Strength
   - Speed
+  - Points
   layers:
   - Default
   - TransparentFX
