@@ -32,9 +32,11 @@ public class Axe : MonoBehaviour
         if (other.gameObject.CompareTag("FriendDoor"))
         {
             health--;
-            if (health == 0)
+            
+            if (health < 2)
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
+                doorText.SetActive(false);
             }
         }
 
