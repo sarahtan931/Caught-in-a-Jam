@@ -60,8 +60,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Instantiate(keyPrefabVar, new Vector3(196.15f, -125.6f, 0), Quaternion.identity);
-            Instantiate(keyPrefabVar, new Vector3(-203f, -123f, 0), Quaternion.identity);
-            Instantiate(keyPrefabVar, new Vector3(-187f, 108f, 0), Quaternion.identity);
         }
 
         if (collision.gameObject.tag == "Ladybug" || collision.gameObject.tag == "Grasshopper" || collision.gameObject.tag == "Bee" || collision.gameObject.tag == "Caterpillar")
