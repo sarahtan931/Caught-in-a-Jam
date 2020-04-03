@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
     private readonly string selectedCharacter = "SelectedCharacter";
 
     public HealthBar healthBar;
-    public SpeedBar speedBar;
-    public StrengthBar strengthBar;
 
     void Start()
     {
@@ -39,31 +37,11 @@ public class PlayerMovement : MonoBehaviour
         direction = false;
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        strength = 1;
-        strengthBar.SetMinStrength(strength);
-        SetStats();
+        strength = StatsSave.S.strength;
+        speed = StatsSave.S.speed;
       
     }
 
-    public void SetStats()
-    {
-        if (PlayerPrefs.GetInt(selectedCharacter) == 1)
-        {
-            speed = 60f;
-            speedBar.SetMinSpeed(speed);
-
-            strength = 1;
-            strengthBar.SetMinStrength(strength);
-        }
-        if (PlayerPrefs.GetInt(selectedCharacter) == 2)
-        {
-            speed = 80f;
-            speedBar.SetMinSpeed(speed);
-
-            strength = 2;
-            strengthBar.SetMinStrength(strength);
-        }
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Grass")
@@ -176,15 +154,15 @@ public class PlayerMovement : MonoBehaviour
         if (go.tag == "Water")
         {
             Destroy(go);
-            SetSpeed(2);
-            
+            SetSpeed(10);
+            speed += 10;
         }
 
         if (go.tag == "Sunshine")
         {
             Destroy(go);
-            SetStrength(2);
-
+            SetStrength(1);
+            strength++;
         }
 
         if (go.tag == "Key")
@@ -209,7 +187,6 @@ public class PlayerMovement : MonoBehaviour
         if(go.tag == "EnemyProjectile")
         {
             Destroy(go);
-            speedBar.SetSpeed(60);
            // TakeDamage(1);
         }
 
@@ -256,18 +233,19 @@ public class PlayerMovement : MonoBehaviour
     void SetSpeed(int s)
     {
         speed += s;
-        speedBar.SetSpeed(speed);
+        StatsSave.S.SetSpeed(speed);
 
     }
 
     void SetStrength(int s)
     {
         strength += s;
-        strengthBar.SetStrength(strength);
+        StatsSave.S.SetStrength(strength);
     }
 
     public void LoadGameOverScene()
     {
+        Destroy(StatsSave.S.gameObject);
         SceneManager.LoadScene(0);
     }
 }

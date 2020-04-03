@@ -59,15 +59,15 @@ public class Enemy : MonoBehaviour
     {
         if (this.gameObject.tag == "Ladybug")
         {
-            maxHealth = 3;
+            maxHealth = 10;
         }
         if (this.gameObject.tag == "Grasshopper")
         {
-            maxHealth = 5;
+            maxHealth = 15;
         }
         if (this.gameObject.tag == "Bee")
         {
-            maxHealth = 4;
+            maxHealth = 20;
         }
     }
 
