@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: c6ccf99667115d64cbbf0b7fb265c58e
+guid: 3a66a615c659f734da7264ed32ef18e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2501991129196655164
-    second: BeeAn_1
+      213: -4681118803083186311
+    second: FullBlueberrySprite_0
   - first:
-      213: -6319573473551127954
-    second: BeeAn_4
+      213: 8074558935984307517
+    second: FullBlueberrySprite_1
   - first:
-      213: 7057359722984605700
-    second: BeeAn_6
+      213: -9114776026938516142
+    second: FullBlueberrySprite_2
   - first:
-      213: 159170878458768744
-    second: BeeAn_7
-  - first:
-      213: -2341589138083974050
-    second: BeeAn_11
-  - first:
-      213: -1712076922247282537
-    second: BeeAn_14
-  - first:
-      213: 6652517009853478219
-    second: BeeAn_17
-  - first:
-      213: 7545980663785090044
-    second: BeeAn_20
-  - first:
-      213: -734532604506380616
-    second: BeeAn_21
+      213: 6990759408447398887
+    second: FullBlueberrySprite_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -113,64 +98,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BeeAn_1
+      name: FullBlueberrySprite_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 472
+        width: 325
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee1a14311d775947831f10fb25f24d8
+      internalID: -4681118803083186311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullBlueberrySprite_1
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 463
+        width: 325
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa9337fa47c72f4696461bf5d297465
+      internalID: 8074558935984307517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FullBlueberrySprite_2
       rect:
         serializedVersion: 2
         x: 55
-        y: 254
-        width: 607
-        height: 517
+        y: 30
+        width: 325
+        height: 354
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 079e125136a1f1e4cba11bd989da0c56
-      internalID: 2501991129196655164
+      spriteID: b8a106b82e1918b44a1477c785bed5c3
+      internalID: -9114776026938516142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeeAn_4
+      name: FullBlueberrySprite_3
       rect:
         serializedVersion: 2
-        x: 717
-        y: 274
-        width: 568
-        height: 519
+        x: 439
+        y: 29
+        width: 324
+        height: 353
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dc81d275dc96104ea0d0d73a4be5f40
-      internalID: -6319573473551127954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BeeAn_6
-      rect:
-        serializedVersion: 2
-        x: 1335
-        y: 285
-        width: 568
-        height: 573
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcba10e76a9656141a3cb6cc45485405
-      internalID: 7057359722984605700
+      spriteID: b092737d85dc90c4d9dcb71fc64b6c74
+      internalID: 6990759408447398887
       vertices: []
       indices: 
       edges: []
