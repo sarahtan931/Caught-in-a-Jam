@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Stick : MonoBehaviour
 {
+    //declaring the GameObjects to enable the stick 
     private GameObject stick;
-    private bool stickDirection;
     private GameObject player;
+    //declaring a boolean variable to store the direction of the stick 
+    private bool stickDirection;
     private readonly string selectedCharacter = "SelectedCharacter";
 
     // Start is called before the first frame update
@@ -15,7 +17,7 @@ public class Stick : MonoBehaviour
         stick = this.gameObject;
         stickDirection = PlayerMovement.direction;
         player = this.transform.parent.gameObject;
-
+        //if anyother character other that then blueberry is selected, set value to false 
         if (PlayerPrefs.GetInt(selectedCharacter) != 2)
         {
             stick.SetActive(false);
@@ -28,6 +30,7 @@ public class Stick : MonoBehaviour
     void Update()
     {
 
+        //controlling the direction of the stick 
         stickDirection = PlayerMovement.direction;
 
         if (stickDirection == true)
