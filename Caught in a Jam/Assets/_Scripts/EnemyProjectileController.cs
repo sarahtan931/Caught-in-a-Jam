@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemyProjectileController : MonoBehaviour
 {
+   //Declaring the speed of the player as well as a rigidbody
     public float speed;
-
     public PlayerMovement player;
-
-  
-
     private Rigidbody2D rb;
     void Start()
     {

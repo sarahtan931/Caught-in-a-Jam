@@ -39,7 +39,7 @@ public class Axe : MonoBehaviour
         {
             doorText.SetActive(true);
             health--;
-            if (health == 0)
+            if (health < 2)
             {
                 // destroys the door and displays text
                 Destroy(other.gameObject);

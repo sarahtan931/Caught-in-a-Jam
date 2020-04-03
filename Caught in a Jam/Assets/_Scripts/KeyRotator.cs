@@ -13,6 +13,7 @@ public class KeyRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //rotating the key 
         transform.Rotate(Vector3.back);
     }
 }

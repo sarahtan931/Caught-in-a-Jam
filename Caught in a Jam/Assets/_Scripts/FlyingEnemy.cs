@@ -61,12 +61,10 @@ public class FlyingEnemy : MonoBehaviour
         {
             MovingDirection = Vector3.up;
 
-
         }
         else if (this.transform.position.y < -1.2f)
         {
             MovingDirection = Vector3.down;
-
 
         }
         this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
@@ -83,14 +81,12 @@ public class FlyingEnemy : MonoBehaviour
         // destroys the enemy the GameObject collides with the enemy (object with tag "Enemy")
         if (go.tag == "Projectile")
         {
-            //  health--;
             Destroy(go);
             TakeDamage(1);
         }
 
         else if (go.tag == "Stick")
         {
-            // health--;
             print(health);
             TakeDamage(1);
         }

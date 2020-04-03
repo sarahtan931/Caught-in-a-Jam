@@ -6,7 +6,7 @@ public class StatsSave : MonoBehaviour
 {
     public int strength;
     public float speed;
-
+    public int points;
 
     private readonly string selectedCharacter = "SelectedCharacter";
 
@@ -46,6 +46,7 @@ public class StatsSave : MonoBehaviour
     {
         StatsSave.S.strength = strength;
         StatsSave.S.speed = speed;
+        StatsSave.S.points = points;
     }
 
     public void SetSpeed(float s)
@@ -57,6 +58,16 @@ public class StatsSave : MonoBehaviour
     public void SetStrength(int s)
     {
         strength += s;
+    }
+
+    public void SetPoints(int s)
+    {
+        points++;
+    }
+
+    public void LoseSpeed()
+    {
+        speed -= 10;
     }
 }
 
