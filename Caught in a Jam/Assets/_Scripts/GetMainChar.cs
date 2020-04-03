@@ -7,12 +7,12 @@ public class GetMainChar : MonoBehaviour
 {
     //Declaring the Sprite variables strawberry and blueberry 
     public Sprite strawberry,blueberry;
-    private SpriteRenderer mySprite;
-    private readonly string selectedCharacter = "SelectedCharacter";
+    private SpriteRenderer _mySprite;
+    private readonly string _selectedCharacter = "SelectedCharacter";
 
-    private void Awake()
+    void Awake()
     {
-        mySprite = this.GetComponent<SpriteRenderer>();
+        _mySprite = this.GetComponent<SpriteRenderer>();
        
 
     }
@@ -23,16 +23,16 @@ public class GetMainChar : MonoBehaviour
         //Declaring an int value to store the choice 
         int getCharacter;
 
-        getCharacter = PlayerPrefs.GetInt(selectedCharacter);
+        getCharacter = PlayerPrefs.GetInt(_selectedCharacter);
 
         //Switch statement between a strawberry and blueberry. First case representing the strawberry player, second case representing the blueberry player
         switch (getCharacter)
         {
             case 1:
-                mySprite.sprite = strawberry;
+                _mySprite.sprite = strawberry;
                 break;
             case 2:
-                mySprite.sprite = blueberry;
+                _mySprite.sprite = blueberry;
                 break;
            
             default:
@@ -40,9 +40,4 @@ public class GetMainChar : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

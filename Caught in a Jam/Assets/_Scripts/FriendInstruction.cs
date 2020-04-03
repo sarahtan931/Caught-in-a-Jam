@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FriendInstruction : MonoBehaviour
 {
-    public float time = 5; //Seconds to read the text
+    public float time = 5f; //Seconds to read the text
 
     IEnumerator Start()
     {
+        // displays text for certain amount of time before destroying the text
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }

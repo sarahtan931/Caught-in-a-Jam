@@ -6,12 +6,13 @@ public class Projectile : MonoBehaviour
 {
     
     [SerializeField]
-    private float _destroyEnemy = 1;
-    private BoundsCheck bndCheck;
+    private float _destroyEnemy = 1f;
+    private BoundsCheck _bndCheck;
     
     void Awake()
     {
-        bndCheck = GetComponent<BoundsCheck>();
+        // calls on BoundsCheck script
+        _bndCheck = GetComponent<BoundsCheck>();
     }
     private void Start()
     {
@@ -23,7 +24,7 @@ public class Projectile : MonoBehaviour
     { 
 
         //checks if BoundScript is active on GameObject and if so destroys object if needed
-        if (bndCheck != null && (bndCheck.offDown || bndCheck.offLeft || bndCheck.offRight))
+        if (_bndCheck != null && (_bndCheck.offDown || _bndCheck.offLeft || _bndCheck.offRight))
         {
             Destroy(gameObject);
         }
