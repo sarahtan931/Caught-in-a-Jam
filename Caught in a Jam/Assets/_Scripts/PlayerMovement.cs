@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
-            LoadGameOverScene();
+            ReloadGame();
         }
     }
 
@@ -236,7 +236,13 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-   void TakeDamage(int damage)
+    public void ReloadGame()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(0);
+    }
+
+    void TakeDamage(int damage)
     {
         health = health - damage;
         healthBar.SetHealth(health);
