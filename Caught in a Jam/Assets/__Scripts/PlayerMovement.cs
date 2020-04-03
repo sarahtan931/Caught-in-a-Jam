@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //FINAL VERSION
     public static float speed = 70f;
     public float jumpSpeed = 8f;
     public static int strength = 1;
@@ -77,13 +76,12 @@ public class PlayerMovement : MonoBehaviour
                         rigidBody.velocity = velocity;
 
                     }
-                    else { 
-                        //health--;
+                    else {
                         TakeDamage(1);
                     }
                 }
             }
-            else { //health--;
+            else { 
                 TakeDamage(1);
             }
         }
