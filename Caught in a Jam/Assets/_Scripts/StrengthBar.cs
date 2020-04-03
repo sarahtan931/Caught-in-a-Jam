@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class StrengthBar : MonoBehaviour
 {
+    //Setting up a bar to visual represent the strength of the player 
     public Slider slider;
     public Image fill;
 
@@ -13,15 +14,10 @@ public class StrengthBar : MonoBehaviour
     {
         slider.minValue = strength;
         slider.value = strength;
-
-
     }
 
     public void SetStrength(float strength)
     {
         slider.value = strength;
-
-
-
     }
 }

@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
-
+    //Visual bar to display the health level 
     public void SetMaxHealth(int health){
         slider.maxValue = health;
         slider.value = health;
