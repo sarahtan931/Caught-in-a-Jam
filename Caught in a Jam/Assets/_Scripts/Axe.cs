@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Axe : MonoBehaviour
 {
+    //Declaring the GameObjects
     public GameObject item;
     public GameObject tempParent;
-    public Transform guide;
-    bool carrying;
-    float health = 4;
-    float time = 5;
     public GameObject pickUpText;
     public GameObject doorText;
+
+    public Transform guide;
+
+    bool carrying;
+    float health = 4;
     // Start is called before the first frame update
 
     private void Start()
