@@ -9,7 +9,7 @@ public class Axe : MonoBehaviour
     public Transform guide;
     bool carrying;
     float health = 4;
-
+    float time = 5;
     public GameObject pickUpText;
     public GameObject doorText;
     // Start is called before the first frame update
@@ -35,10 +35,11 @@ public class Axe : MonoBehaviour
             if (health == 0)
             {
                 Destroy(other.gameObject);
+                doorText.SetActive(false);
             }
         }
-
     }
+
     void Update()
     {
         if (carrying)
