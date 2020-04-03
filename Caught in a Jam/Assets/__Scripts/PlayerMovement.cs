@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float projectileSpeed = 40;
     public static bool direction;
     private bool isOnGround = false;
+    public static int points = 0;
 
     public GameObject doorPrefabVar;
     private GameObject door;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         strength = StatsSave.S.strength;
         speed = StatsSave.S.speed;
+        points = StatsSave.S.points;
       
     }
 
@@ -155,14 +157,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(go);
             SetSpeed(5);
-            speed += 5;
+           // speed += 5;
         }
 
         if (go.tag == "Sunshine")
         {
             Destroy(go);
             SetStrength(1);
-            strength++;
+           // strength++;
         }
 
         if (go.tag == "Key")
@@ -221,6 +223,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void LoadNextScene()
     {
+        StatsSave.S.SetPoints(points);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }

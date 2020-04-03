@@ -95,6 +95,7 @@ public class FlyingEnemy : MonoBehaviour
 
         if (health <= 0)
         {
+            PlayerMovement.points++;
             Destroy(this.gameObject);
         }
     }

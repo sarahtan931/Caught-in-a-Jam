@@ -34,12 +34,14 @@ public class StatsSave : MonoBehaviour
             speed = 60f;
 
             strength = 1;
+            points = 0;
         }
         if (PlayerPrefs.GetInt(selectedCharacter) == 2)
         {
             speed = 80f;
 
             strength = 2;
+            points = 0;
         }
     }
     public void SavePlayer()
@@ -51,18 +53,18 @@ public class StatsSave : MonoBehaviour
 
     public void SetSpeed(float s)
     {
-        speed += s;
+        speed = s;
 
     }
 
     public void SetStrength(int s)
     {
-        strength += s;
+        strength = s;
     }
 
     public void SetPoints(int s)
     {
-        points++;
+        points += s;
     }
 
     public void LoseSpeed()

@@ -107,6 +107,7 @@ public class Enemy : MonoBehaviour
         }
         if(health <= 0)
         {
+            PlayerMovement.points++;
             Destroy(this.gameObject);
         }
     }
@@ -128,6 +129,7 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0)
         {
+            PlayerMovement.points++;
             Destroy(this.gameObject);
         }
     }
