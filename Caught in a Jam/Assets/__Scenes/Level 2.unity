@@ -670,7 +670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 85.22, y: -60.04}
+  m_AnchoredPosition: {x: 89.315, y: -89}
   m_SizeDelta: {x: 1162.66, y: 228.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344261841
@@ -1513,6 +1513,7 @@ MonoBehaviour:
     type: 3}
   keyPrefabVar: {fileID: 5400946627705987718, guid: 4d2239341397a99439dd5c99ead3a6de,
     type: 3}
+  keyText: {fileID: 1981281107}
   maxHealth: 5
   health: 0
   healthBar: {fileID: 1800390827}
@@ -1944,7 +1945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231.68, y: 126}
+  m_AnchoredPosition: {x: -231.68, y: 93.96}
   m_SizeDelta: {x: 113.42, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959709603
